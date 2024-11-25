@@ -6,7 +6,7 @@ class apiError extends Error{
         statusCode,
         message = "Somthing went to rong ",
         errors = [],
-        statck =""  
+        stack =""  
     ){
         super(message)
         this.message = statusCode
@@ -15,8 +15,8 @@ class apiError extends Error{
         this.success = false
         this.errors = errors
         
-        if (statck) {
-            this.stack = statck
+        if (stack) {
+            this.stack = stack
             
         }else{
             Error.captureStackTrace(this,this.constructer)
